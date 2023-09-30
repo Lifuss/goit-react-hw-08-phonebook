@@ -1,17 +1,19 @@
-import ContactForm from './ContactForm/ContactForm';
-import Filter from './Filter/Filter';
-import ContactList from './ContactList/ContactList';
-import { StyledDiv } from './App.styled';
+import Home from 'pages/Home';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './ContactForm/Layout/Layout';
+import Login from 'pages/Login';
+import Register from 'pages/Register';
+import PageNotFound from 'pages/PageNotFound';
 
 export const App = () => {
   return (
-    <StyledDiv>
-      <h1>Phone book</h1>
-      <ContactForm />
-
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </StyledDiv>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
 };
