@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { contactApi } from 'redux/user/operations';
 
 const { createAsyncThunk } = require('@reduxjs/toolkit');

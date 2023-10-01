@@ -42,7 +42,7 @@ export const logoutThunk = createAsyncThunk(
   'logout',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await contactApi.post('/users/logout');
+      await contactApi.post('/users/logout');
       clearToken();
     } catch (error) {
       rejectWithValue(error.message);
