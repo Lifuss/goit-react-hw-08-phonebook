@@ -1,4 +1,3 @@
-import { StyledDiv } from 'components/App.styled';
 import ContactForm from 'components/ContactForm/ContactForm';
 import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter/Filter';
@@ -6,14 +5,16 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <StyledDiv>
-      <h1>Phone book</h1>
-      <ContactForm />
+    <div className="flex gap-8 p-8">
+      <div className="w-1/4 flex flex-col justify-start items-center">
+        <ContactForm />
+      </div>
 
-      <h2>Contacts</h2>
-      <Filter />
-      <ContactList />
-    </StyledDiv>
+      <div className="w-3/4">
+        <Filter />
+        <ContactList />
+      </div>
+    </div>
   );
 };
 
