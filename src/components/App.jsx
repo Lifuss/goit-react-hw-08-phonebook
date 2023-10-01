@@ -5,8 +5,19 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import PageNotFound from 'pages/PageNotFound';
 import PrivateRoute from 'routes/PrivateRoute';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectIsRefresh, selectToken } from 'redux/user/selectors';
+import { useEffect } from 'react';
+import { refreshThunk } from 'redux/user/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const token = useSelector(selectToken);
+  useEffect(() => {
+    if (!token) return;
+    dispatch(refreshThunk());
+  }, [dispatch, token]);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

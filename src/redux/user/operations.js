@@ -49,3 +49,18 @@ export const logoutThunk = createAsyncThunk(
     }
   }
 );
+
+export const refreshThunk = createAsyncThunk(
+  'refresh',
+  async (body, { rejectWithValue, getState }) => {
+    const savedToken = getState().user.token;
+    if (!savedToken) return;
+    try {
+      setToken(getState().user.token);
+      const { data } = await contactApi.get('/users/current');
+      return data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  }
+);
