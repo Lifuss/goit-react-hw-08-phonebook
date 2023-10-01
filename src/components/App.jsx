@@ -6,9 +6,9 @@ import Register from 'pages/Register';
 import PageNotFound from 'pages/PageNotFound';
 import PrivateRoute from 'routes/PrivateRoute';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsRefresh, selectToken } from 'redux/user/selectors';
 import { useEffect } from 'react';
 import { refreshThunk } from 'redux/user/operations';
+import { selectToken } from 'redux/user/selectors';
 
 export const App = () => {
   const dispatch = useDispatch();
