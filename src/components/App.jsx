@@ -5,7 +5,7 @@ import Login from 'pages/Login';
 import Register from 'pages/Register';
 import PageNotFound from 'pages/PageNotFound';
 import PrivateRoute from 'routes/PrivateRoute';
-// deploy test
+
 export const App = () => {
   return (
     <Routes>
