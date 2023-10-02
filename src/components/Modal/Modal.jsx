@@ -13,16 +13,6 @@ const Modal = ({ name, number, id }) => {
 
   const dispatch = useDispatch();
   const ref = useRef(null);
-  // useEffect(() => {
-  //   console.log(name);
-  //   setValue('name', { name });
-  //   setValue('number', { number });
-  // }, [name, number, setValue]);
-
-  // const handleInput = e => {
-  //   console.log(e.target.value);
-  //   setUserName(e.target.value);
-  // };
 
   const submit = data => {
     const updateUser = {
