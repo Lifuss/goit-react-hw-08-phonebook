@@ -25,7 +25,7 @@ const Layout = () => {
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
               {isLogin ? (
-                <li>
+                <li className="text-sm list-none">
                   <details>
                     <summary>{email}</summary>
                     <ul className="p-2 bg-base-100">
@@ -37,10 +37,10 @@ const Layout = () => {
                 </li>
               ) : (
                 <>
-                  <li>
+                  <li className="text-sm list-none">
                     <NavLink to="/login">Login</NavLink>
                   </li>
-                  <li>
+                  <li className="text-sm list-none">
                     <NavLink to="/register">Register</NavLink>
                   </li>
                 </>
